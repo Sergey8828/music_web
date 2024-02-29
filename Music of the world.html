@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>Music of the World</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #d1 {
+            background-color: lightblue;
+            text-decoration: none;
+            width: 1350px;
+            height: 50px;
+        }
+        header img{
+           width: 100%;
+        }
+        #a1, .aa {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 22px;
+            padding: 10px;
+            font-weight: bold;
+        }
+                #a1 {
+            color: blue;
+            font-family: 'Californian FB';
+            width: 500px;
+            text-align: center;
+        }
+        .aa {
+            color: darkblue;
+            border-left: 3px solid white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-left: 30px;
+        }
+        #textdiv {
+            padding:30px;
+            font-size: 20px;
+            color: white;
+            background-image: url("nature.jpeg");
+            width: 100%;
+            height: 607px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 4px;
+        }
+        #sb {
+            float: left;
+        }
+        #ss {
+            float: right;
+        }               
+        footer  {
+            color:aqua;
+            font-size:20px;
+            text-align:center;
+        }
+        li {
+            font-size:large;
+            font-weight: bold;
+            margin-left: 40px; 
+            margin-top: 35px; 
+            display: inline-block; 
+            color: aqua; 
+            text-decoration: none;
+            background-color:royalblue;
+            padding:30px;         
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            color: #2196f3;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 97%;
+            transform: translate(-50%, -50%);
+        }
+        #rockButton.hoverrockSong, #popButton.hoverpopSong, #rapButton.hoverrapSong,
+        #jazzButton.hoverjazzSong, #electroButton.hoverelectroSong, #houseButton.hoverhouseSong
+        {
+            background-image: url(Untitled.png);
+            background-size: cover;
+            border: solid 5px green;
+            font-size: 20px;
+            height: 75px;
+            width: 75px;
+        }
+        .images {
+            display: flex;
+        }
+        h3{
+            margin-top:300px;
+            padding:60px;
+            margin-left:25px;
+        }
+        .audioPlayer {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .videoPlayer {
+            display: flex;
+            margin-top:-10px;
+        }
+        .fullVideo {
+            width: 100%;
+                 }
+        h1 {
+            color: aqua; 
+            border: 3px solid black; 
+            background-color:brown; 
+            margin-left:285px; 
+            margin-top:-200px; 
+            width: 750px; 
+            height: 50px; 
+            background-color: black;
+            opacity: 0.6; 
+        }
+        #listOfTracks {
+            color:blue; 
+            font-weight:bold;
+        }
+        h2  {
+            margin-top:150px;
+            color:blue;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+        </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="bg-buttons">
+            <audio id="rockSong">
+                <source src="rock.mp3" type="audio/mpeg">
+                <source src="rock.mp3" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="popSong">
+                <source src="pop.mp3" type="audio/mpeg">
+                <source src="pop.mp3" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="rapSong">
+                <source src="rap.mp3" type="audio/mpeg">
+                <source src="rap.mp3" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="jazzSong">
+                <source src="jazz.mp3" type="audio/mpeg">
+                <source src="jazz.mp3" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="electroSong">
+                <source src="Scooter - FIRE.mp3" type="audio/mpeg">
+                <source src="Scooter - FIRE.mp3" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <audio id="houseSong">
+                <source src="house.mp3" type="audio/mpeg">
+                <source src="house.mp3" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <header>
+            <img src="car1.jpg" height=500 />
+        </header>
+
+        <div id="d1">
+            <a id="a1" href="#">What Type of Music do you like  ???</a>
+            <a class="aa" id="rockButton" onClick="playMusic('rockSong')" href="#">Rock</a>
+            <a class="aa" id="popButton" onClick="playMusic('popSong')" href="#">Pop</a>
+            <a class="aa" id="rapButton" onClick="playMusic('rapSong')" href="#">Rap</a>
+            <a class="aa" id="jazzButton" onClick="playMusic('jazzSong')" href="#">Jazz</a>
+            <a class="aa" id="electroButton" onClick="playMusic('electroSong')" href="#">Electro</a>
+            <a class="aa" id="houseButton" onClick="playMusic('houseSong')" href="#">House</a>
+        </div>
+
+        <ul>
+            <li> <a href="https://www.makeuseof.com/tag/top-10-sites-listen-classical-music/">The Top 10 Sites To Listen To Classical Music</a></li>
+            <li><a href="https://blog.feedspot.com/pop_music_blogs/">45 Best Pop Music Blogs and Websites</a></li>
+            <li> <a href="https://www.hp.com/us-en/shop/tech-takes/best-free-music-download-sites">10 Best Sites for Free Music Downloads</a></li>
+        </ul>
+        <div class="images">
+            <div class="container">
+                <img id="sb" style="margin-top:4px" src="cat2.jpg" />
+                <div class="centered">MUSIC IS MY LANGUAGE</div>
+            </div>
+            <div id="textdiv">
+                <p> Music is generally defined as the art of arranging sound to create some combination of form, harmony, melody, rhythm or otherwise expressive content. Exact definitions of music vary considerably around the world, though it is an aspect of all human societies, a cultural universal.</p>
+                <h3> Have you heard about synthpop ?<br /> <br />Watch the video below, listen and enjoy.....</h3>
+            </div>
+        </div>
+        <iframe class="fullVideo" height="560" src="https://www.youtube.com/embed/9zgm_l-YhAk" title="Drive. (Mr.Kitty - After Dark)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="videoPlayer">
+            <iframe width="650" height="400" src="https://www.youtube.com/embed/zLY3w47Vr-g" title="Cat in earphones (HD)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <img id="gif" src="https://i.gifer.com/origin/f6/f642eb0a3f80a087901b25a09c638a33_w200.gif" alt="Gif">
+            <img src="sky.jpeg" width="625" height="400" />
+        </div>
+
+        <div class="audioPlayer">
+            <audio controls>
+                <source id="dontgo" src="please-dont-go.mp3" type="audio/mpeg">
+                <source src="please-dont-go.mp3" type="audio/ogg">
+                <p>
+                    your browser doesn't support a format
+                    <a href="please-dont-go.mp3">link</a>
+                </p>
+            </audio>
+        </div>
+
+        <footer>
+            <h1>Thanks for listening, come back again!!!</h1>
+        </footer>
+
+    </div>
+    <h2>List of tracks above</h2>
+    <div id="listOfTracks">
+        <input type="radio" name="GTA" id="rb1" value="1" />Thunderstruck
+        <br />
+        <input type="radio" name="GTA" id="rb2" value="2" />Jinnie in the bottle
+        <br />
+        <input type="radio" name="GTA" id="rb3" value="3" />In da Club
+        <br />
+        <input type="radio" name="GTA" id="rb2" value="2" />Best Jazz
+        <br />
+        <input type="radio" name="GTA" id="rb2" value="2" />Scooter - fire
+        <br />
+        <input type="radio" name="GTA" id="rb2" value="2" />Best house
+        <br />
+    </div>
+    <div>
+    <a style="color:blue; font-weight:bold; border:2px solid; text-decoration:none;padding:20px; margin-top:-50px; margin-left:1150px;" href="mailto:seregam8829@gmail.com">mail to Sergey</a>
+    </div>
+
+    <script>
+        function playMusic(id) {
+            ['rockSong', 'popSong', 'rapSong', 'jazzSong', 'electroSong', 'houseSong'].filter(function (x) { return x !== id; }).forEach(function (item) {
+                const trackStop = document.getElementById(item);
+                trackStop.pause()
+            });
+            const trackPlay = document.getElementById(id);
+
+            trackPlay.paused ? trackPlay.play() : trackPlay.pause();
+        }
+
+        const RockButton = $('#rockButton');
+        console.log(RockButton);
+
+        RockButton.hover(
+            function () {
+                $(this).addClass("hoverrockSong");
+            },
+            function () {
+                $(this).removeClass("hoverrockSong");
+            },
+        );
+
+        const PopButton = $('#popButton');
+        console.log(PopButton);
+
+        PopButton.hover(
+            function () {
+                $(this).addClass("hoverpopSong");
+            },
+            function () {
+                $(this).removeClass("hoverpopSong");
+            },
+        );
+
+        const RapButton = $('#rapButton');
+        console.log(RapButton);
+
+        RapButton.hover(
+            function () {
+                $(this).addClass("hoverrapSong");
+            },
+            function () {
+                $(this).removeClass("hoverrapSong");
+            },
+        );
+
+        const JazzButton = $('#jazzButton');
+        console.log(JazzButton);
+
+        JazzButton.hover(
+            function () {
+                $(this).addClass("hoverjazzSong");
+            },
+            function () {
+                $(this).removeClass("hoverjazzSong");
+            },
+        );
+
+         const ElectroButton = $('#electroButton');
+        console.log(ElectroButton);
+
+        ElectroButton.hover(
+            function () {
+                $(this).addClass("hoverelectroSong");
+            },
+            function () {
+                $(this).removeClass("hoverelectroSong");
+            },
+        );
+
+        const HouseButton = $('#houseButton');
+        console.log(HouseButton);
+
+        HouseButton.hover(
+            function () {
+                $(this).addClass("hoverhouseSong");
+            },
+            function () {
+                $(this).removeClass("hoverhouseSong");
+            },
+        );
+
+    </script>
+</body>
+</html>
+
